@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <title>Calculadora de Carbono — Visual</title>
-  <style>
+  <style> 
     body { font-family: Arial, sans-serif; background:#f4f6f8; margin:0; display:flex; justify-content:center; }
     .card { width:760px; background:#fff; border-radius:10px; box-shadow:0 6px 20px rgba(0,0,0,0.08); margin:40px; padding:24px; }
     h1 { margin:0 0 8px 0; }
@@ -69,7 +69,7 @@
   </div>
 
 <script>
-const API = "https://illiberal-unnecessarily-jeannette.ngrok-free.dev";
+const API = "http://127.0.0.1:8000";
 let chartInstance = null;
 
 function onTipoChange(){
@@ -107,9 +107,9 @@ async function calcular(){
   if(tipo === "avião" && !isNaN(passageiros) && passageiros > 0) payload.passageiros = passageiros;
 
   try {
-    const resp = await fetch(API, {
+    const resp = await fetch(`${API}/calcular`, {
       method: "POST",
-      headers: {"Content-Type":"application/json"},
+      headers: { "Content-Type": "application/json" },
       body: JSON.stringify(payload)
     });
 
