@@ -1,9 +1,9 @@
 # projeto/backend.py
-from flask import Flask
-from flask_cors import CORS  # 👈 importa o CORS
+#from flask import Flask
+#from flask_cors import CORS  # 👈 importa o CORS
 
-app = Flask(__name__)
-CORS(app)  # 👈 habilita o CORS em todas as rotas
+#app = Flask(__name__)
+#CORS(app)  # 👈 habilita o CORS em todas as rotas
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
